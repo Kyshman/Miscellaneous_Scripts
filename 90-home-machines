@@ -1,0 +1,2 @@
+# To get access for sudo without using password
+tony ALL=(ALL) NOPASSWD:ALL
