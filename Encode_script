@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in *.mp4
+do
+HandBrakeCLI -i $i -o Encodes/$i --preset "Very Fast 480p30"
+done

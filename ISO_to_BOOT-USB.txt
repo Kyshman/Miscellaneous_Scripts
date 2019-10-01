@@ -1,0 +1,37 @@
+Before all steps please double confirm on data on the USB and the device path
+
+#####Convert the ISO to UDRW format
+hdiutil convert -format UDRW -o destination_file.img source_file.iso
+
+#####Prepare the USB stick
+diskutil list
+
+#####Format and Partition
+diskutil partitionDisk /dev/disk2 1 "Free Space" "unused" "100%"
+
+#####Copy the image to the USB stick
+dd if=destination_file.img.dmg of=/dev/rdisk2 bs=1m ----> No progress display
+
+pv /path/to/downloaded.img | sudo dd of=/dev/rdisk2 bs=1m ---> With progress and if dd is GNU
+
+or 
+
+pv /path/to/downloaded.img | sudo dd of=/dev/rdisk2 bs=1M ---> With progress and if dd is BSD
+
+#####Eject USB
+diskutil eject /dev/disk2
+
+bbs.lunduke.com
+Your name is kysh.
+Your user # is 2282.
+Your password is "CHRISTOM".
+
+TOP 5 TORRENT WEBSITES!
+Website list:
+5 - www.rulu.co
+4 - www.limetorrents.cc
+3 - www8.pluspremieres.us
+2 - www.primewire.ag
+1 - mp3.pm
+
+

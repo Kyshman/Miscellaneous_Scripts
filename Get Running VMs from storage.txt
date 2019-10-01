@@ -1,0 +1,4 @@
+xe vdi-list sr-name-label="NFS virtual disk storage" --minimal > /tmp/vdi-uuid.csv #Remember to transpose the output for next command
+for i in `cat /tmp/vdi-ordered.csv`; do xe vbd-list vdi-uuid=$i params=vm-uuid --minimal; done > /tmp/vm-uuids.txt
+for i in `cat /tmp/vm-uuids.txt`; do xe vm-list uuid=$i params=name-label,power-state | grep -B 1 running; done > /tmp/running-vms.txt
+cat /tmp/running-vms.txt | grep -v running > /tmp/names-running-vms.txt
